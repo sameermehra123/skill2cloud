@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill2Cloud - Launching Soon</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #ffffff; }
+        .hero-section { 
+            background: #1e3a8a; 
+            min-height: 80vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .launch-soon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ef4444;
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 12px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        .feature-card { 
+            transition: transform 0.2s, box-shadow 0.2s; 
+            border: none; 
+            border-radius: 10px; 
+            background: #ffffff; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ef4444;
+        }
+        .btn-custom { 
+            background: #ef4444; 
+            color: #ffffff; 
+            border-radius: 25px; 
+            padding: 10px 25px; 
+            font-weight: 500; 
+        }
+        .btn-custom:hover { 
+            background: #dc2626; 
+        }
+        .navbar { 
+            background: transparent; 
+        }
+        .navbar.scrolled { 
+            background: #ffffff; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+        }
+        .navbar.scrolled .nav-link, .navbar.scrolled .navbar-brand { 
+            color: #1e3a8a !important; 
+        }
+        .modal-content { 
+            border-radius: 12px; 
+            border: none; 
+        }
+        .modal-header { 
+            background: #f9fafb; 
+            border-radius: 12px 12px 0 0; 
+        }
+        #features { 
+            padding-top: 2rem; 
+            padding-bottom: 4rem; 
+            background: #f9fafb; 
+        }
+        @media (max-width: 768px) {
+            .launch-soon { 
+                font-size: 1.25rem; 
+                padding: 8px 0; 
+            }
+            #features { 
+                padding-top: 1.5rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 text-white" href="#">Skill2Cloud</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white fw-medium" href="#features">Offerings</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#emailModal">Updates</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-medium" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white">
+        <div class="launch-soon">Launching Soon</div>
+        <div class="container text-center pt-20">
+            <h1 class="display-4 fw-bold mb-4">Discover a New Way to Grow Skills in Cloud & Cybersecurity</h1>
+            <p class="lead fs-5 mb-5">Explore podcasts, workshops, labs, interview prep, events, and blogs to elevate your expertise.</p>
+            <button class="btn btn-custom btn-lg" data-bs-toggle="modal" data-bs-target="#emailModal">Get Updates</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">What We Offer</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title fw-semibold mb-3">Podcasts & Blogs</h5>
+                            <p class="card-text">Gain cutting-edge insights from industry leaders to stay ahead.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title fw-semibold mb-3">Workshops & Labs</h5>
+                            <p class="card-text">Master skills with immersive, hands-on training sessions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title fw-semibold mb-3">Interview Prep & Events</h5>
+                            <p class="card-text">Boost your career with expert prep and exclusive networking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Modal -->
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="emailModalLabel">Stay Updated</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="fs-5 mb-3">Want updates on our launch?</p>
+                    <p class="fw-medium">Contact us at:</p>
+                    <a href="mailto:support@skill2cloud.com" class="fs-4 text-primary">support@skill2cloud.com</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2">Contact: <a href="mailto:support@skill2cloud.com" class="text-primary">support@skill2cloud.com</a></p>
+            <p>© 2025 Skill2Cloud. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
